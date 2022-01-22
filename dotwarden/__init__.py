@@ -43,24 +43,24 @@ class Dotwarden:
     def __init__(self):
 
         self.__warden_dir__ = (
-            Warden.pickle_read()
-            if Warden.pickle_exists()
-            else Warden.encode(generate_random_dot_name())
+            Dotwarden.pickle_read()
+            if Dotwarden.pickle_exists()
+            else Dotwarden.encode(generate_random_dot_name())
         )
 
-        if not Warden.pickle_exists():
-            Warden.pickle_write(self.__warden_dir__)
+        if not Dotwarden.pickle_exists():
+            Dotwarden.pickle_write(self.__warden_dir__)
 
         if self.warden_dir not in listdir(getcwd()):
             mkdir(self.warden_dir)
 
     @property
     def warden_dir(self):
-        return Warden.decode(self.__warden_dir__)
+        return Dotwarden.decode(self.__warden_dir__)
 
     def destroy(self) -> bool:
         try:
-            remove(Warden.PICKLE_FILE)
+            remove(Dotwarden.PICKLE_FILE)
             self.existing_pickle = False
             return True
         except Exception as err:
@@ -70,7 +70,7 @@ class Dotwarden:
     @staticmethod
     def encode(string_value):
         return a85encode(
-            b=bytes(string_value, encoding=Warden.BYTE_ENCODING),
+            b=bytes(string_value, encoding=Dotwarden.BYTE_ENCODING),
             foldspaces=False,
             pad=False,
             adobe=False,
@@ -80,7 +80,7 @@ class Dotwarden:
     def decode(encoded_value):
         return str(
             a85decode(b=encoded_value, foldspaces=False, adobe=False),
-            encoding=Warden.BYTE_ENCODING,
+            encoding=Dotwarden.BYTE_ENCODING,
         )
 
     @staticmethod
@@ -90,7 +90,7 @@ class Dotwarden:
     @staticmethod
     def pickle_write(value, pickle_file=PICKLE_FILE) -> None:
         with open(pickle_file, "wb") as write_file:
-            pickle.dump(obj=value, file=write_file, protocol=Warden.PICKLE_PROTOCOL)
+            pickle.dump(obj=value, file=write_file, protocol=Dotwarden.PICKLE_PROTOCOL)
 
     @staticmethod
     def pickle_read(pickle_file=PICKLE_FILE) -> str:
