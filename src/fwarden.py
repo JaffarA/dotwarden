@@ -1,6 +1,6 @@
-from random import choice
 from base64 import a85encode
 from base64 import a85decode
+from random import choice
 from os import listdir
 from os import remove
 from os import getcwd
@@ -21,11 +21,12 @@ E_WORD_BANK = [
     "ragnor",
     "henrik",
 ]
+E_WORD_LEN = 3
 
 
 def generate_random_dot_name() -> str:
     names = []
-    while len(names) < 3:
+    while len(names) < E_WORD_LEN:
         c = choice(E_WORD_BANK)
         if c not in names:
             names.append(c)
