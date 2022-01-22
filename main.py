@@ -1,6 +1,6 @@
-from warden.fwarden import Warden
+from dotwarden.dotwarden import Dotwarden
 
 if __name__ == "__main__":
 
-    warden = Warden()
+    warden = Dotwarden()
     input(warden.warden_dir)

@@ -33,7 +33,7 @@ def generate_random_dot_name(name_len=E_WORD_LEN, name_bank=E_WORD_BANK) -> str:
     return f".{'-'.join(names)}"
 
 
-class Warden:
+class Dotwarden:
 
     PICKLE_FILE = ".fwarden_STORE"
     PICKLE_PROTOCOL = 4

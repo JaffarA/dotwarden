@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "warden"
+name = "dotwarden"
 version = "1.0.0"
 description = "a utility for generating hidden random . directories"
 authors = ["Jaffar <jaffar.almaleki@gmail.com>"]
