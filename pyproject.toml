@@ -1,9 +1,15 @@
 [tool.poetry]
 name = "dotwarden"
-version = "1.0.0"
+version = "1.0.2"
 description = "a utility for generating hidden random . directories"
 authors = ["Jaffar <jaffar.almaleki@gmail.com>"]
+homepage = "https://github.com/JaffarA/dotwarden"
+repository = "https://github.com/JaffarA/dotwarden"
+readme = "README.md"
 license = "GPLv3"
+include = [
+    "LICENSE",
+]
 
 [tool.poetry.dependencies]
 python = "^3.4"
