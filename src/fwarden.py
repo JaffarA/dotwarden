@@ -37,6 +37,7 @@ class Warden:
     PICKLE_FILE = ".fwarden_STORE"
     PICKLE_PROTOCOL = 4
     PICKLE_STORE = "warden_STORE"
+    BYTE_ENCODING = "ASCII"
 
     def __init__(self):
 
@@ -68,7 +69,7 @@ class Warden:
     @staticmethod
     def encode(string_value):
         return a85encode(
-            b=bytes(string_value, encoding="ASCII"),
+            b=bytes(string_value, encoding=Warden.BYTE_ENCODING),
             foldspaces=False,
             pad=False,
             adobe=False,
@@ -78,7 +79,7 @@ class Warden:
     def decode(encoded_value):
         return str(
             a85decode(b=encoded_value, foldspaces=False, adobe=False),
-            encoding="ASCII",
+            encoding=Warden.BYTE_ENCODING,
         )
 
     @staticmethod
