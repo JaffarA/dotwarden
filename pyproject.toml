@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dotwarden"
-version = "1.0.3"
+version = "1.0.4"
 description = "a utility for generating hidden random . directories"
 authors = ["Jaffar <jaffar.almaleki@gmail.com>"]
 homepage = "https://github.com/JaffarA/dotwarden"

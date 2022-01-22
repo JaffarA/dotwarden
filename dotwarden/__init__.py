@@ -35,9 +35,9 @@ def generate_random_dot_name(name_len=E_WORD_LEN, name_bank=E_WORD_BANK) -> str:
 
 class Dotwarden:
 
-    PICKLE_FILE = ".fwarden_STORE"
+    PICKLE_FILE = ".warden"
     PICKLE_PROTOCOL = 4
-    PICKLE_STORE = "warden_STORE"
+    PICKLE_STORE = ".warden"
     BYTE_ENCODING = "ASCII"
 
     def __init__(self):
