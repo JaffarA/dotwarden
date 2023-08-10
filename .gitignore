@@ -1,2 +1,6 @@
 .fwarden_STORE
 *.pyc
+__pycache__
+.ruff_cache
+.vscode
+.warden
